@@ -2,14 +2,13 @@
 # (позиционные аргументы) и выполняющую их деление. \
 # Числа запрашивать у пользователя, предусмотреть \
 # обработку ситуации деления на ноль.
-num = 0
-n=0
-i = 0
-a = 0
-# c = exp(n*ln(x)))
-def  while
-    i < abs(a):
-    a = a * num;
-    i = i + 1
-    if( n == 0 ):
-    return 1
+def division(a,b):
+    if b==0:
+        print('b=0 а делить на ноль нельзя!')
+        b = float(input("на ноль делить нельзя введите любую цифру (кроме нуля) b = "))
+        return division(a, b)
+    return a/b
+a = float(input('введите а - '))
+b = float(input('введите b - '))
+c = division(a,b)
+print('Ответ = {}'.format(c))
