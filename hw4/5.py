@@ -3,3 +3,8 @@
 # от 100 до 1000 (включая границы). Необходимо получить результат
 # вычисления произведения всех элементов списка.
 # Подсказка: использовать функцию reduce().
+from functools import reduce
+def summa (arg1,arg2):
+    return arg1*arg2
+print(reduce(summa,[n for n in range(100, 1000+1, 2)]))
+print(reduce(lambda a, b: a * b, [n for n in range(100, 1000+1, 2)])) # с лябдой
