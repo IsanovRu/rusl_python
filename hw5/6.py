@@ -3,3 +3,14 @@
 # занятий по этому предмету и их количество. Важно, чтобы для каждого предмета
 # не обязательно были все типы занятий. Сформировать словарь, содержащий название
 # предмета и общее количество занятий по нему. Вывести словарь на экран.
+
+
+mydict = {}
+with open("6.txt", encoding="utf-8") as f:
+    for line in f:
+        name, stats = line.split(':')  # получаем name, stats через :
+        name_sum = sum(map(int, "".join([i for i in stats if i == ' ' or (i >= '0' and i <= '9')]).split()))
+        #  перебирает все элементы в stats и берт их если это числа
+        #  join([i for i in stats if i == ' ' or (i >= '0' and i <= '9')]).split()))
+        mydict[name] = name_sum
+print(f"{mydict}")

@@ -1,11 +1,10 @@
 # Создать текстовый файл (не программно), сохранить в нем несколько строк,
 # выполнить подсчет количества строк, количества слов в каждой строке.
 try:
-    with open("hw2.txt", "r") as f_obj:
+    with open("hw2.txt", "r", encoding='utf-8') as f_obj:
         print('количество строк - ', sum(1 for _ in f_obj))
         print('количест символов в файле - ', f_obj.tell())
         print('количество слов в файле - ', len(set(open("hw2.txt").read().split())))
 except IOError:
     print("Произошла ошибка ввода-вывода!")
-# finally:
-#     f_obj.close()
+
